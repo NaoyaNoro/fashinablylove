@@ -1,0 +1,66 @@
+.contact-content{
+    margin: 20px auto;
+    width: 972px;
+}
+
+.contact-ttl{
+    text-align: center;
+    font-size: 30px;
+    color: #8B7969;
+}
+
+.contact-item{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.contact-item__name{
+    font-size: 20px;
+    width: 30%;
+}
+
+.contact-item__input{
+    width: 60%;
+}
+
+.contact-item__name--red{
+    color: red;
+}
+
+.contact-item__first_name,.contact-item__input-last_name{
+    width: 280px;
+}
+
+.contact-item__input-gender--girl,.contact-item__input-gender--other{
+    margin-left: 50px;
+}
+
+.contact-item__input-email,.contact-item__input-address,.contact-item__input-building{
+    width: 100%;
+}
+
+.contact-item__input-tell{
+    width: 32%;
+}
+
+.contact-item__input-category{
+    width: 50%;
+}
+
+.contact-item__input-detail{
+    width: 100%;
+    height: 100px;
+}
+
+.contact-item__button{
+    text-align: center;
+}
+
+.contact-item__button-submit{
+    background-color: #82756A;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 10px 30px;
+}

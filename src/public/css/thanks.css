@@ -1,0 +1,25 @@
+.thanks-content {
+    margin: 20px auto;
+    width: 972px;
+}
+
+.thanks-content__ttl{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #82756A;
+    font-size: 20px;
+}
+
+.thanks-item__button{
+    width: 100%;
+    text-align: center;
+}
+
+.thanks-item__button-submit {
+    background-color: #82756A;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+}
