@@ -1,7 +1,7 @@
 @extends('layouts.user')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
 
 @section('content')
@@ -35,11 +35,11 @@
             <div class="admin-search__item">
                 <input type="date" class="admin-search__item-date" name="date">
             </div>
-            <div class="admin-search__button">
+            <div class="admin-search__item">
                 <button class="admin-search__button-submit" type="submit">検索</button>
             </div>
         </form>
-        <form action="/admin" type="post">
+        <form action="/admin" type="post" class="admin-search__form-reset">
             @csrf
             <div class="admin-search__button">
                 <button class="admin-search__button-reset" type="submit">リセット</button>
@@ -48,22 +48,25 @@
     </div>
 
     @if(is_null(session('search_results')))
+    <div class="admin-table__page">
+        {{ $contents->links('pagination::bootstrap-4') }}
+    </div>
     <div class="admin-table">
         <table class="admin-table__inner">
             <tr class="table-row">
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     お名前
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     性別
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     メールアドレス
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     お問い合わせの種類
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name--last">
                 </th>
             </tr>
             @foreach($contents as $content)
@@ -89,32 +92,32 @@
                     {{$content->category->content}}
                 </td>
                 <td class="table-item">
-                    <button wire:click="$emit('openModal', {{ $content->id }})" type="button" class="detail">詳細</button>
+                    <button wire:click="$emit('openModal', {{ $content->id }})" type="button" class="detail-button">詳細</button>
                 </td>
             </tr>
             @endforeach
         </table>
-        {{ $contents->links('pagination::bootstrap-4') }}
         @livewire('modal')
     </div>
 
     @else
+    {{ $contents->links('pagination::bootstrap-4') }}
     <div class="admin-table">
         <table class="admin-table__inner">
             <tr class="table-row">
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     お名前
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     性別
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     メールアドレス
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                     お問い合わせの種類
                 </th>
-                <th class="table-ttl">
+                <th class="admin-table__name ">
                 </th>
             </tr>
             @foreach(session('search_results') as $content)
@@ -140,14 +143,12 @@
                     {{$content->category->content}}
                 </td>
                 <td class="table-item">
-                    <button wire:click="$emit('openModal', {{ $content->id }})" type="button" class="detail">詳細</button>
+                    <button wire:click="$emit('openModal', {{ $content->id }})" type="button" class="detail-button">詳細</button>
                 </td>
             </tr>
             @endforeach
         </table>
         @livewire('modal', ['contact' => null])
-        {{ $contents->links('pagination::bootstrap-4') }}
-
     </div>
     @endif
 </div>

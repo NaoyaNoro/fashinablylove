@@ -1,0 +1,80 @@
+.confirm-content {
+    margin: 20px auto;
+    width: 1512px;
+}
+
+.admin-ttl {
+    text-align: center;
+    font-size: 30px;
+    color: #8B7969;
+}
+
+.admin-search__form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.admin-search{
+    display: flex;
+    align-items: center;
+}
+
+.admin-search__item{
+    margin-left: 30px;
+    height: 20px;
+}
+
+.admin-search__item-name,.admin-search__item-gender,.admin-search__item-category,.admin-search__item-date{
+    height: 30px;
+}
+
+.admin-search__button-submit {
+    background-color: #82756A;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+
+.admin-search__button-reset{
+    background-color: #D9C6B5;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.admin-table__inner {
+    margin: 20px auto;
+    border: 1px solid #E0DFDE;
+}
+
+.admin-table__name {
+    width: 20%;
+    color: white;
+    background-color: #8B7969;
+    text-align: center;
+    border: none;
+}
+
+.admin-table__name--last{
+    width: 10%;
+    background-color: #8B7969;
+}
+
+.table-item{
+    text-align: center;
+    color: #8B7969;
+    border-bottom: 1px solid #E0DFDE;
+    padding: 5px;
+}
+
+.detail-button{
+    border: 1px solid #D9C6B5;
+    color: #D9C6B5;
+}
+
+.admin-table__page{
+    text-align: right;
+}

@@ -23,11 +23,12 @@
             @csrf
             <button class="header-nav__button">Logout</button>
         </form>
-        @endif
-        <form class="form" action="/login" method="post">
+        @else
+        <form class="form" action="/login" method="get">
             @csrf
             <button class="header-nav__button">Login</button>
         </form>
+        @endif
     </div>
     <main>
         @yield('content')

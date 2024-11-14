@@ -1,0 +1,36 @@
+.login__content {
+    background-color: #F2ECE7;
+    height: 100vh;
+    max-width: 1512px;
+    width: 100%;
+}
+
+.login-content__form {
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.login-form__heading {
+    text-align: center;
+    color: #8B7969;
+    padding: 30px;
+}
+
+.login-form {
+    text-align: center;
+}
+
+.form__input {
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+.form__button-submit {
+    background-color: #82756A;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 10px 30px;
+}
