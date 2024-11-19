@@ -12,15 +12,23 @@ class ContactController extends Controller
     public function index()
     {
         $categories=Category::all();
-        return view('index',compact('categories'));
+        return view('test',compact('categories'));
+    }
+
+    public function correct(Request $request)
+    {
+        $form = $request->only(['category_id', 'first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail']);
+        return redirect('/')->with('form', $form);
     }
 
     public function confirm(ContactRequest $request)
     {
         $categories = Category::all();
         $contents =$request->all();
+        dd($contents);
         return view('confirm',compact('contents','categories'));
     }
+
     public function thanks(Request $request)
     {
         $form=$request->only(['category_id', 'first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail']);

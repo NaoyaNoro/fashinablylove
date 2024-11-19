@@ -10,7 +10,7 @@
     <div class="confirm-ttl">
         <h2>confirm</h2>
     </div>
-    <form action="/thanks" class="confirm-form" method="post">
+    <form action="?" class="confirm-form" method="post">
         @csrf
         <div class="confirm-table">
             <table class="confirm-table__inner">
@@ -70,7 +70,7 @@
                         お問い合わせの種類
                     </th>
                     <td class="confirm-table__item">
-                        <input type="text" name="category_id" class="confirm__input" value="{{$contents['category']}}" readonly>
+                        <input type="text" name="category_id" class="confirm__input" value="{{$contents['category_id']}}" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -84,13 +84,8 @@
             </table>
         </div>
         <div class="confirm-item__button">
-            <button class="confirm-item__button-submit" type="submit">送信</button>
-        </div>
-    </form>
-    <form action="/" class="confirm-correct" method="get">
-        @csrf
-        <div class="correct-item__button">
-            <button class="correct-item__button-submit" type="submit">修正</button>
+            <button class="confirm-item__button-submit" type="submit" formaction="/thanks">送信</button>
+            <button class="correct-item__button-submit" type="submit" formaction="/">修正</button>
         </div>
     </form>
 </div>
