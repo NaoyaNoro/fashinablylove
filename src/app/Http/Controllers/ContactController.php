@@ -12,7 +12,7 @@ class ContactController extends Controller
     public function index()
     {
         $categories=Category::all();
-        return view('test',compact('categories'));
+        return view('index',compact('categories'));
     }
 
     public function correct(Request $request)
@@ -23,10 +23,9 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $categories = Category::all();
+        $category =Category::all();
         $contents =$request->all();
-        dd($contents);
-        return view('confirm',compact('contents','categories'));
+        return view('confirm',compact('contents','category'));
     }
 
     public function thanks(Request $request)

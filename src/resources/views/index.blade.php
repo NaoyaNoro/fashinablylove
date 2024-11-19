@@ -23,6 +23,7 @@
                 </span>
             </div>
             <div class="contact-item__input">
+                {{--
                 @if(empty(session('form')))
                 <input type="text" class="contact-item__first_name" name="first_name" value="{{old('first_name')}}" placeholder="例:山田">
                 @else
@@ -39,6 +40,15 @@
                 @endif
                 @error('last_name')
                 {{$errors->first('last_name')}}
+                @enderror
+                --}}
+                <input type="text" class="contact-item__first_name" name="first_name" value="{{session('form.first_name',old('first_name'))}}" placeholder="例:山田">
+                @error('first_name')
+                {{$errors->first('first_name')}}
+                @enderror
+                <input type="text" class="contact-item__last_name" name="last_name" value="{{session('form.last_name',old('first_name'))}}" placeholder="例:太郎">
+                @error('first_name')
+                {{$errors->first('first_name')}}
                 @enderror
             </div>
         </div>
@@ -168,16 +178,15 @@
                 </span>
             </div>
             <div class="contact-item__input">
-                {{--@if(empty(session('form')))--}}
-                <select name="category_id" class="contact-item__input-category">
+                @if(empty(session('form')))
+                <select name="category" class="contact-item__input-category">
                     <option value="" selected hidden>選択してください</option>
                     @foreach($categories as $category)
                     <option value="{{$category['id']}}">{{$category['content']}}</option>
                     @endforeach
                 </select>
-                {{--コメントアウトしてます
                 @else
-                <select name="category_id" class="contact-item__input-category">
+                <select name="category" class="contact-item__category">
                     @foreach($categories as $category)
                     @if(session('form')['category_id']==$category['id'])
                     <option value="{{$category['id']}}" selected>{{$category['content']}}</option>
@@ -187,7 +196,6 @@
                     @endforeach
                 </select>
                 @endif
-                --}}
                 @error('category_id')
                 {{$errors->first('category_id')}}
                 @enderror

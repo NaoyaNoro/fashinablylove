@@ -70,7 +70,7 @@
                         お問い合わせの種類
                     </th>
                     <td class="confirm-table__item">
-                        <input type="text" name="category_id" class="confirm__input" value="{{$contents['category_id']}}" readonly>
+                        <input type="text" name="category_id" class="confirm__input" value="{{$contents['category']}}" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
