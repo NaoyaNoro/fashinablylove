@@ -92,12 +92,11 @@
                     {{$content->category->content}}
                 </td>
                 <td class="table-item">
-                    <button wire:click="$emit('openModal', {{ $content->id }})" type="button" class="detail-button">詳細</button>
+                    @livewire('test')
                 </td>
             </tr>
             @endforeach
         </table>
-        @livewire('modal')
     </div>
 
     @else
@@ -143,13 +142,13 @@
                     {{$content->category->content}}
                 </td>
                 <td class="table-item">
-                    <button wire:click="$emit('openModal', {{ $content->id }})" type="button" class="detail-button">詳細</button>
+                    @livewire('test')
                 </td>
             </tr>
             @endforeach
         </table>
-        @livewire('modal', ['contact' => null])
     </div>
     @endif
 </div>
+@livewire('test')
 @endsection

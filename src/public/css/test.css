@@ -1,0 +1,42 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明の背景 */
+    z-index: 999;
+    /* モーダルの背面に配置 */
+    display: none;
+    /* 初期状態では非表示 */
+}
+
+/* モーダル本体（コンテンツ） */
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 中央に配置 */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* 背景の上に配置 */
+    opacity: 0;
+    transform: translate(-50%, -40%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* モーダルが表示される時 */
+.modal-content.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* モーダルオーバーレイが表示される時 */
+.modal-overlay.show {
+    display: block;
+}
