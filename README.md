@@ -1,7 +1,7 @@
 # お問合せフォーム
 
 ##Dockerビルド
-1. git clone リンク
+1. git clone https://github.com/NaoyaNoro/fashinablylove.git
 2. docker-compose up -d --build
 *MySQLは，OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集して下さい。
 
