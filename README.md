@@ -1,6 +1,6 @@
 # お問合せフォーム
 
-##Dockerビルド
+#Dockerビルド
 1. git clone git@github.com:NaoyaNoro/fashinablylove.git
 2. DockerDesktopアプリを立ち上げる
 3. docker-compose up -d --build
