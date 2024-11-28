@@ -9,7 +9,8 @@
 ## Laravel環境構築
 1. PHPコンテナ内にログインする <br>`docker-compose exec php bash`
 2. composerコマンドを使って必要なコマンドのインストール <br>`composer install`
-3. .env.exampleファイルから.envを作成し，環境変数を変更<br>
+3. .env.exampleファイルから.envを作成 <br>`cp .env.example .env`
+4. 環境変数を変更<br>
    ```
    DB_HOST=mysql
    DB_PORT=3306 
@@ -17,9 +18,9 @@
    DB_USERNAME=laravel_user
    DB_PASSWORD=laravel_pass
    ```  
-4. アプリケーションキーの作成<br> `php artisan key:generate`
-5. マイグレーションの実行<br> `php artisan migrate`
-6. シーディングの実行<br> `php artisan db:seed`
+5. アプリケーションキーの作成<br> `php artisan key:generate`
+6. マイグレーションの実行<br> `php artisan migrate`
+7. シーディングの実行<br> `php artisan db:seed`
 
 ## 使用技術
 * php 7.4.9
