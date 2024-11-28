@@ -12,7 +12,6 @@
 3. .env.exampleファイルから.envを作成し，環境変数を変更<br>
    ```
    DB_HOST=mysql
-   DB_HOST=mysql
    DB_PORT=3306 
    DB_DATABASE=laravel_db
    DB_USERNAME=laravel_user
