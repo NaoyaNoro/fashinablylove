@@ -1,23 +1,36 @@
 # お問合せフォーム
 
-##Dockerビルド
-1. git clone リンク
-2. docker-compose up -d --build
-*MySQLは，OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集して下さい。
+## Dockerビルド
+1. リポジトリの複製<br>`git clone git@github.com:NaoyaNoro/fashinablylove.git`
+2. DockerDesktopアプリを立ち上げる
+3. dockerをビルドする<br>`docker-compose up -d --build`
+>3を実行するときに，`no matching manifest for linux/arm64/v8 in the manifest list entries` というようなエラーが出ることがあります。この場合，docker-compose.ymlのmysqlサービスとphp myadminのサービスの箇所に `platform: linux/amd64` というような表記を追加してください
 
-##Laravel環境構築
-1. docker-compose exec php bash
-2. composer install
-3. .env.exampleファイルから..envを作成し，環境変数を変更
-4. php artisna key:generate
-5. php artisan migrate
-6. php artisan db:seed
+## Laravel環境構築
+1. PHPコンテナ内にログインする <br>`docker-compose exec php bash`
+2. composerコマンドを使って必要なコマンドのインストール <br>`composer install`
+3. .env.exampleファイルから.envを作成し，環境変数を変更<br>
+   ```
+   DB_HOST=mysql
+   DB_HOST=mysql
+   DB_PORT=3306 
+   DB_DATABASE=laravel_db
+   DB_USERNAME=laravel_user
+   DB_PASSWORD=laravel_pass
+   ```  
+4. アプリケーションキーの作成<br> `php artisan key:generate`
+5. マイグレーションの実行<br> `php artisan migrate`
+6. シーディングの実行<br> `php artisan db:seed`
 
-##使用技術
-・php 8.0
-・Laravel10.0
-・MySQL8.0
+## 使用技術
+* php 7.4.9
+* Laravel 8.83.8
+* MySQL 8.0.26
 
-##URL
-・開発環境:http://localhost
-・phpmyadmin:http://localhost:8080/
+## ER図
+![er](https://github.com/user-attachments/assets/aa9cfd0e-03e6-48c4-a78a-95bfeef5be0f)
+
+
+## URL
+* 開発環境:http://localhost
+* phpmyadmin:http://localhost:8080/
