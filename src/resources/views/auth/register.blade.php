@@ -1,7 +1,14 @@
-@extends('layouts.user')
+@extends('layouts.app')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+@endsection
+
+@section('button')
+<form class="form" action="/login" method="get">
+    @csrf
+    <button class="header-nav__button">login</button>
+</form>
 @endsection
 
 @section('content')
@@ -33,7 +40,7 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="email" name="email" value="{{ old('email') }}" class="form__input" placeholder="例:test@example.com" />
+                        <input type="text" name="email" value="{{ old('email') }}" class="form__input" placeholder="例:test@example.com" />
                     </div>
                     <div class=" form__error">
                         @error('email')

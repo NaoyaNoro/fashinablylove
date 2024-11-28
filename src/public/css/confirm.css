@@ -44,7 +44,7 @@
     text-align: center;
     border: none;
     padding: 10px 30px;
-    margin-left: 50%;
+    margin: 10px;
 }
 
 .correct-item__button-submit{
@@ -52,9 +52,10 @@
     border: none;
     background-color: white;
     border-bottom: #82756A 1px solid;
-    margin-left: 50%;
+    margin: 10px;
 }
 
 .confirm-item__button{
     display: flex;
+    justify-content: center;
 }

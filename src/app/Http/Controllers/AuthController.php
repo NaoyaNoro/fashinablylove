@@ -38,13 +38,19 @@ class AuthController extends Controller
             $query->whereDate('created_at', $request->date);
         }
 
-        $search_results = $query->get();
+        $search_results = $query->paginate(7);
 
         return redirect('/admin')->with('search_results', $search_results);
     }
 
     public function reset()
     {
+        return redirect('/admin');
+    }
+
+    public function destroy(Request $request)
+    {
+        Contact::find($request->id)->delete();
         return redirect('/admin');
     }
 }

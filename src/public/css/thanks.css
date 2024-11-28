@@ -1,6 +1,7 @@
 .thanks-content {
     margin: 20px auto;
-    width: 972px;
+    width: 1512px;
+    height: 500px;
 }
 
 .thanks-content__ttl{
@@ -15,6 +16,9 @@
 .thanks-item__button{
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .thanks-item__button-submit {
@@ -22,4 +26,27 @@
     color: white;
     border: none;
     padding: 10px 30px;
+}
+
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    /* フォントを指定 */
+}
+
+body::before {
+    content: "thank you";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15rem;
+    /* 文字サイズ */
+    color: rgba(0, 0, 0, 0.1);
+    /* 薄い文字色 */
+    white-space: nowrap;
+    z-index: -1;
+    /* 背景として扱う */
+    pointer-events: none;
+    /* クリックなどを無効化 */
 }

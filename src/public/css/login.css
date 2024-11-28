@@ -34,3 +34,7 @@
     border: none;
     padding: 10px 30px;
 }
+
+.form__error{
+    color: red;
+}

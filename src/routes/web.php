@@ -20,11 +20,16 @@ Route::get('/',[ContactController::class,'index']);
 Route::post('/', [ContactController::class, 'correct']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'thanks']);
+
+
 Route::middleware('auth')->group(function (){
     Route::get('/admin',[AuthController::class,'index']);
 });
-Route::post('/search', [AuthController::class, 'search']);
+Route::get('/search', [AuthController::class, 'search']);
+/*
 Route::post('/admin', [AuthController::class, 'reset']);
+*/
+Route::delete('/delete', [AuthController::class, 'destroy']);
 
 
 

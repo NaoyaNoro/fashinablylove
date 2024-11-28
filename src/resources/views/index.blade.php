@@ -107,8 +107,15 @@
                 -
                 @endif
                 @endforeach
+
                 @if($errors->hasAny(['tell_first', 'tell_second', 'tell_third']))
-                <span class="error">電話番号を入力してください</span>
+                <ul class="error">
+                    @foreach(['tell_first', 'tell_second', 'tell_third'] as $tell_tag)
+                    @if($errors->has($tell_tag))
+                    <li>{{$errors->first($tell_tag)}}</li>
+                    @endif
+                    @endforeach
+                </ul>
                 @endif
             </div>
         </div>
@@ -158,10 +165,9 @@
                     </option>
                     @endforeach
                 </select>
-                @error('category_id')
+                @error('category')
                 <span class="error">{{ $message }}</span>
                 @enderror
-
             </div>
         </div>
         <div class="contact-item">

@@ -13,7 +13,6 @@
         }
     </style>
 
-    <button wire:click="openModal">編集</button>
     @if($isOpen)
     <div class="modal-content">
         <h2>モーダルウインドウ</h2>

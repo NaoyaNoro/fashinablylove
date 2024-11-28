@@ -70,11 +70,105 @@
     padding: 5px;
 }
 
-.detail-button{
+.table_detail_btn{
     border: 1px solid #D9C6B5;
     color: #D9C6B5;
+    padding: 5px;
+    text-decoration: none;
 }
 
 .admin-table__page{
     text-align: right;
 }
+
+/* モーダル全体の非表示設定 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 背景を半透明にする */
+    z-index: 1000;
+}
+
+/* モーダル内のコンテンツ */
+.modal__inner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 50px 30px;
+    border-radius: 8px;
+    width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* モーダルを表示する際の設定 */
+.modal:target {
+    display: block;
+}
+
+/* 閉じるボタンの設定 */
+.modal__close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.modal-form__delete-btn{
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+.modal-form__delete{
+    display: flex;
+    justify-content: center;
+}
+
+.export-form {
+    display: flex;
+    align-items: center;
+    /* 縦方向の中央揃え */
+    justify-content: space-around;
+    /* 横方向のスペース確保 */
+    gap: 16px;
+    /* 子要素間の間隔を調整 */
+}
+
+.export-form__form {
+    margin: 0;
+    /* フォームの余白をリセット */
+}
+
+
+
+.admin-table__page .pagination .page-item.active .page-link {
+    background-color: #82756A;
+    /* ボタンの背景色 */
+    border-color: #82756A;
+    /* ボタンの枠線色 */
+}
+
+.admin-table__page .pagination .page-link {
+    color: #555;
+    /* 通常の文字色 */
+}
+
+
+.admin-table__page .pagination {
+    font-size: 12px;
+    /* フォントサイズを調整 */
+    padding: 0.2rem;
+}
+
+
